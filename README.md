@@ -19,3 +19,13 @@ python switch_app.py
 مثال: كتابة `hgsghl ugd;l` ثم ضغط اختصار التحويل تستبدلها مباشرةً بـ `السلام عليكم`.
 
 إغلاق النافذة لا يغلق التطبيق؛ يظل موجودًا بجوار الساعة. اختر **خروج** من أيقونة Switch لإغلاقه بالكامل.
+
+## بناء ملف تنفيذي (Build EXE)
+
+```powershell
+python -m pip install pyinstaller
+pyinstaller --noconsole --onefile --name "Switch" --icon "switch.ico" --add-data "switch.ico;." --add-data "switch_icon.jpg;." --hidden-import "win32com.client" --hidden-import "pystray" switch_app.py
+```
+
+ستجد الملف التنفيذي داخل مجلد `dist/Switch.exe`.
+
